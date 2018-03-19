@@ -1,6 +1,7 @@
 package com.meiyou.icekotlin
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -42,9 +43,10 @@ class MainActivity : AppCompatActivity() {
 
     fun setListener(){
         findViewById<Button>(R.id.btnImageList).setOnClickListener { view ->
-            val intent = Intent()
-            intent.setClass()
+            val intent =  Intent()
+            intent.setClass(applicationContext,ImageListActivity::class.java)
             startActivity(intent)
+            //startActivity<ImageListActivity>()
         };
 
     }
