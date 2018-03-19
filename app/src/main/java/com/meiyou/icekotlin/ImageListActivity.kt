@@ -2,7 +2,9 @@ package com.meiyou.icekotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 import com.meiyou.icekotlin.adapter.ImageListAdapter
 import com.meiyou.icekotlin.controller.ImageListLazyController
 
@@ -32,6 +34,9 @@ class ImageListActivity:AppCompatActivity(){
         mAdapter?.notifyDataSetChanged()
     }
     fun setListener(){
-        mListView?.setOnItemClickListener(postion->);
+        mListView?.setOnItemClickListener(AdapterView.OnItemClickListener { adapterView, view, i, l ->
+            //YOUR CODE HERE}
+            Toast.makeText(applicationContext,"i click ${i}",Toast.LENGTH_SHORT).show()
+        });
     }
 }
