@@ -23,6 +23,7 @@ class ImageListActivity:AppCompatActivity(){
         initLogic()
         setListener()
     }
+
     fun initUI(){
         mListView = findViewById(R.id.listview_image);
     }
