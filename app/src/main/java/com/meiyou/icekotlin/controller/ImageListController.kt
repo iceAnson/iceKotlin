@@ -14,7 +14,7 @@ object  ImageListController {
             var item = ItemData()
             item.title="title".plus(i)
             item.content="content".plus(i)
-            item.image ="https://sc.seeyouyima.com/my_wm_f7419f782befa6edd1efab8cd0625dfc_1080_1920.jpg?imageView2/1/w/324/h/216/format/webp";
+            item.image ="http://sc.seeyouyima.com/my_wm_f7419f782befa6edd1efab8cd0625dfc_1080_1920.jpg?imageView2/1/w/324/h/216/format/webp";
             listItemData.add(item)
         }
         return listItemData;

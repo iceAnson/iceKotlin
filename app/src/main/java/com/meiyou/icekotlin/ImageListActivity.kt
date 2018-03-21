@@ -39,6 +39,5 @@ class ImageListActivity:AppCompatActivity(){
             //YOUR CODE HERE}
             Toast.makeText(applicationContext,"i click ${i}",Toast.LENGTH_SHORT).show()
         });
-
     }
 }

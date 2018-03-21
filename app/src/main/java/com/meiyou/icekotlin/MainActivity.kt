@@ -3,26 +3,32 @@ package com.meiyou.icekotlin
 import android.content.Intent
 import android.media.Image
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import com.meiyou.icekotlin.fragment.HomeFragment
+import com.meiyou.icekotlin.view.NoScrollViewPager
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mFragments: MutableList<Fragment>
+    private var mViewPager:NoScrollViewPager?=null;
+    private var navigationView: android.support.design.widget.BottomNavigationView?=null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-        setListener();
+        initFragments()
+        initView()
+        setListener()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -40,14 +46,60 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+    private fun initFragments() {
+        mFragments = ArrayList()
+        mFragments.add(HomeFragment.newInstance())
+        mFragments.add(HomeFragment.newInstance())
+        mFragments.add(HomeFragment.newInstance())
+        //mFragments.add(HomeFragment.newInstance())
+        //mFragments.add(FragmentHolder())
+    }
+
+    private fun initView(){
+        mViewPager = findViewById(R.id.viewPager)
+        /*mViewPager?.adapter =object : FragmentPagerAdapter(supportFragmentManager) {
+            override fun getItem(position: Int) = mFragments[position]
+            override fun getCount() = mFragments.size
+        }*/
+        mViewPager?.adapter = object:FragmentPagerAdapter(supportFragmentManager){
+            override fun getItem(position: Int): Fragment {
+                return mFragments[position]
+            }
+            override fun getCount(): Int {
+                return mFragments.size
+            }
+        }
+        mViewPager?.offscreenPageLimit=3
+
+
+       navigationView =  findViewById(R.id.navigationView)
+        navigationView?.setOnNavigationItemSelectedListener { item ->
+            var tab = 0
+            when (item.itemId) {
+                R.id.menu_android -> tab = 0
+                R.id.menu_ios -> tab = 1
+                R.id.menu_girl -> tab = 2
+                //R.id.menu_about -> tab = 3
+            }
+            mViewPager?.currentItem = tab
+            false
+        }
+
+    }
+
+
 
     fun setListener(){
-        findViewById<Button>(R.id.btnImageList).setOnClickListener { view ->
+        /*findViewById<Button>(R.id.btnImageList).setOnClickListener { view ->
             val intent =  Intent()
             intent.setClass(applicationContext,ImageListActivity::class.java)
             startActivity(intent)
             //startActivity<ImageListActivity>()
-        };
-
+        };*/
+        /*fab.setOnClickListener { view ->
+           Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                   .setAction("Action", null).show()
+       }*/
     }
+
 }
