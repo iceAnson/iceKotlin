@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_home"
-        android:icon="@drawable/icon_home"
+        android:icon="@drawable/icon_girl"
         android:enabled="true"
         app:showAsAction="ifRoom"
         android:title="Home"/>
@@ -11,10 +11,10 @@
     <item
 
         android:id="@+id/menu_girl"
-        android:icon="@drawable/icon_girl"
+        android:icon="@drawable/icon_home"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:title="Girl"/>
+        android:title="Info"/>
     <item
 
         android:id="@+id/menu_about"

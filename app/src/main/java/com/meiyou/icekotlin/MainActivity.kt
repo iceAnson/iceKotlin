@@ -1,6 +1,7 @@
 package com.meiyou.icekotlin
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
@@ -92,10 +93,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             //startActivity<ImageListActivity>()
         };*/
-        /*fab.setOnClickListener { view ->
-           Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        fab.setOnClickListener { view ->
+           Snackbar.make(view, "Hello,i am iceKotlin", Snackbar.LENGTH_LONG)
                    .setAction("Action", null).show()
-       }*/
+       }
     }
 
 }
