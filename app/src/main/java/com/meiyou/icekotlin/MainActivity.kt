@@ -1,21 +1,17 @@
 package com.meiyou.icekotlin
 
-import android.content.Intent
-import android.media.Image
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
+import com.meiyou.icekotlin.fragment.AboutFragment
+import com.meiyou.icekotlin.fragment.GirlFragment
 import com.meiyou.icekotlin.fragment.HomeFragment
 import com.meiyou.icekotlin.view.NoScrollViewPager
-
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,9 +44,9 @@ class MainActivity : AppCompatActivity() {
     }
     private fun initFragments() {
         mFragments = ArrayList()
+        mFragments.add(GirlFragment.newInstance())
         mFragments.add(HomeFragment.newInstance())
-        mFragments.add(HomeFragment.newInstance())
-        mFragments.add(HomeFragment.newInstance())
+        mFragments.add(AboutFragment.newInstance())
         //mFragments.add(HomeFragment.newInstance())
         //mFragments.add(FragmentHolder())
     }
@@ -76,9 +72,9 @@ class MainActivity : AppCompatActivity() {
         navigationView?.setOnNavigationItemSelectedListener { item ->
             var tab = 0
             when (item.itemId) {
-                R.id.menu_android -> tab = 0
-                R.id.menu_ios -> tab = 1
-                R.id.menu_girl -> tab = 2
+                R.id.menu_home -> tab = 0
+                R.id.menu_girl -> tab = 1
+                R.id.menu_about -> tab = 2
                 //R.id.menu_about -> tab = 3
             }
             mViewPager?.currentItem = tab

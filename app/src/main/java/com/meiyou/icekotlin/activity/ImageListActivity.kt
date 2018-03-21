@@ -1,10 +1,11 @@
-package com.meiyou.icekotlin
+package com.meiyou.icekotlin.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
+import com.meiyou.icekotlin.R
 import com.meiyou.icekotlin.adapter.ImageListAdapter
 import com.meiyou.icekotlin.controller.ImageListLazyController
 

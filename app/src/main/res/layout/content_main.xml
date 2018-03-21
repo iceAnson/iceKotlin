@@ -2,9 +2,12 @@
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.meiyou.icekotlin.MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <com.meiyou.icekotlin.view.NoScrollViewPager
         android:id="@+id/viewPager"

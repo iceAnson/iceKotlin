@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_android"
-        android:icon="@drawable/icon_android"
+        android:id="@+id/menu_home"
+        android:icon="@drawable/icon_home"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:title="Android"/>
+        android:title="Home"/>
 
-    <item
-
-        android:id="@+id/menu_ios"
-        android:icon="@drawable/icon_ios"
-        android:enabled="true"
-        app:showAsAction="ifRoom"
-        android:title="iOS"/>
     <item
 
         android:id="@+id/menu_girl"
         android:icon="@drawable/icon_girl"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:title="妹子"
+        android:title="Girl"/>
+    <item
+
+        android:id="@+id/menu_about"
+        android:icon="@drawable/icon_about"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:title="About"
         />
     <!--<item
 

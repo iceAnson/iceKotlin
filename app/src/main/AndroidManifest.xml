@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImageListActivity">
+            android:name=".activity.ImageListActivity">
         </activity>
     </application>
 
